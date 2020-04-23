@@ -41,7 +41,7 @@ function getNumbersInfo(...$numbers)
 
 $noNumbers = getNumbersInfo();
 $oneNumber = getNumbersInfo(4);
-$severalNumbers = getNumbersInfo(9, 2, 1, 6, -7, 3);
+$severalNumbers = getNumbersInfo(9, 12, 1, 6, -7, 3);
 
 echo "<pre>";
 var_dump($noNumbers);

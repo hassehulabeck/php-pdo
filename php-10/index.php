@@ -22,13 +22,18 @@ function getLottoByFor()
 }
 
 // En variant med while-loop
-function getLottoByWhile()
+function getLottoByWhile($favorit = null, $avoid = null)
 {
     $lottoRad = array();
+    if ($favorit != null) {
+        $lottoRad[] = $favorit;
+    }
     while (count($lottoRad) < 7) {
         $slumptal = mt_rand(1, 35);
         if (!in_array($slumptal, $lottoRad)) {
-            $lottoRad[] = $slumptal;
+            if ($slumptal != $avoid) {
+                $lottoRad[] = $slumptal;
+            }
         }
     }
     sort($lottoRad);
@@ -36,6 +41,6 @@ function getLottoByWhile()
 }
 
 echo "<pre>";
-var_dump(getLottoByWhile());
+var_dump(getLottoByWhile(4, 25));
 var_dump(getLottoByFor());
 echo "</pre>";

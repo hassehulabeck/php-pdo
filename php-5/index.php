@@ -30,13 +30,12 @@ $counter = 0;
 
 foreach ($suits as $suit) {
     foreach ($ranks as $rank) {
-        $otherdeck[$counter] = array($suit, $rank);
-        $counter++;
+        $otherdeck[] = array("suit" => $suit, "rank" => $rank);
     }
 }
 
 // Hjärter 5 - Hjärter har index 0, och 5 har index 3, så "index-summan" blir (0*13) + 3 = 3. 
-echo "<h1>" . $otherdeck[3][1] . " of " . $otherdeck[3][0];
+echo "<h1>" . $otherdeck[3]['rank'] . " of " . $otherdeck[3]['suit'];
 
 // Klöver 8 - Klöver har index 1, och 8 har index 6, så "index-summan" blir (1*13) + 6 = 19. 
-echo "<p>" . $otherdeck[19][1] . " of " . $otherdeck[19][0];
+echo "<p>" . $otherdeck[19]['rank'] . " of " . $otherdeck[19]['suit'];

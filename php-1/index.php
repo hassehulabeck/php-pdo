@@ -1,6 +1,6 @@
 <?php
 
-$name = "Hans G Andersson";
+$name = "Höns G Andersson";
 
 // Hitta sista mellanslaget.
 $lastSpace = strrpos($name, " ");
