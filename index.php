@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $user = "zooJanitor";
-$pw = "br0MMABL0cks";
+$pw = "br0MMABL0ck";
 
 $dbh = new PDO('mysql:dbname=zoo;host=localhost', $user, $pw);
 
