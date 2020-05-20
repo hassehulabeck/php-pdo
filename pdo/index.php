@@ -5,10 +5,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$user = "zooJanitor";
-$pw = "br0MMABL0cks";
+include 'secret.php';
 
 $dbh = new PDO('mysql:dbname=zoo;host=localhost', $user, $pw);
+
 
 // Kolla om någon valt ett djur.
 if (isset($_POST['submitAnimal'])) {

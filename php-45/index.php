@@ -11,6 +11,7 @@ foreach ($data as $line) {
     echo "<p>" . $line;
 }
 
+
 $filehandle = fopen('boye.csv', 'r');
 
 while (!feof($filehandle)) {

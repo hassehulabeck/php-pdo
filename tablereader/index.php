@@ -26,6 +26,7 @@ foreach ($table as $row) {
 }
 
 echo "<pre>";
+echo "<p>Före ändring:</p>";
 var_dump($modifiedTable);
 echo "</pre>";
 
@@ -42,6 +43,7 @@ arsort($modifiedTable);
 // Alla varianter på arraysortering: https://www.php.net/manual/en/array.sorting.php
 
 echo "<pre>";
+echo "<p>Efter ändring:</p>";
 var_dump($modifiedTable);
 echo "</pre>";
 

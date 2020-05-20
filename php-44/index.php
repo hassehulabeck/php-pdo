@@ -10,9 +10,9 @@ if (isset($_POST['submit'])) {
 
     // Skapa filnamnet.
     $tid = new DateTime('now', new DateTimeZone('Europe/Stockholm'));
-    $fileName = $tid->format('Y-m-d_H_i_s') . "_" . $_POST['username'] . ".txt";
+    $fileName = $tid->format('Y-m-d') . "_" . $_POST['username'] . ".txt";
 
-    $filehandle = fopen($fileName, 'w');
+    $filehandle = fopen($fileName, 'a');
     fwrite($filehandle, $_POST['message']);
     fclose($filehandle);
 }
