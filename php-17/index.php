@@ -9,6 +9,12 @@ $password = "trello";
 
 // Kolla om någon försöker logga in.
 if (isset($_POST['login'])) {
+
+    // Kod för att kolla mot databas.
+    $sql = "SELECT id FROM users WHERE name = :name AND pw = :pw";
+    $sth = $dbh->prepare($sql);
+    $sth->execute([':name' => $_POST['name'], ':pw' => $_POST['password']]);
+
     if ($_POST['name'] == $userName && $_POST['password'] == $password) {
         echo "<p>Godkänd</p>";
     } else {
