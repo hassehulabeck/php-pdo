@@ -13,6 +13,15 @@ include 'animal.class.php';
 $dbh = new PDO('mysql:host=localhost; dbname=zoo', $user, $pw);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+if (isset($_POST['submitAnimal'])) {
+
+
+    $sql = "UPDATE animals SET name = :name WHERE id = :id";
+    $sth = $dbh->prepare($sql);
+    $sth->execute([':name' => $_POST['name'], ':id' => 10]);
+}
+
+
 
 // // Skicka en query till databasen.
 // foreach ($dbh->query("SELECT * FROM animals") as $row) {
