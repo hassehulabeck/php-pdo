@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+Route::get('/hello/{name?}', function ($name = null) {
+    return view('hello', ['name' => $name]);
+});
+Route::get('/people', function () {
+    return view(
+        'people',
+        [
+            'persons' =>
+            [
+                ["name" => "Rune", "age" => 34],
+                ["name" => "Per", "age" => 42],
+                ["name" => "Jonna", "age" => 31]
+            ]
+        ]
+    );
 });
